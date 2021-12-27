@@ -1,7 +1,17 @@
 {
   "name": "skimple-components",
   "version": "0.1.0",
-  "private": true,
+  "description": "SkimpleComponents is my personal components library built on Bootstrap and designed to be used with Nuxt.",
+  "homepage": "https://github.com/Skyost/SkimpleComponents",
+  "bugs": {
+    "url": "https://github.com/Skyost/SkimpleComponents/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Skyost",
+    "url": "https://skyost.eu"
+  },
+  "repository": "Skyost/SkimpleComponents",
   "main": "dist/skimple-components.umd.min.js",
   "unpkg": "dist/skimple-components.umd.min.js",
   "jsdelivr": "dist/skimple-components.umd.min.js",
