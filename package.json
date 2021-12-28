@@ -1,6 +1,6 @@
 {
   "name": "skimple-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SkimpleComponents is my personal components library built on Bootstrap and designed to be used with Nuxt.",
   "homepage": "https://github.com/Skyost/SkimpleComponents",
   "bugs": {
@@ -12,12 +12,21 @@
     "url": "https://skyost.eu"
   },
   "repository": "Skyost/SkimpleComponents",
+  "keywords": [
+    "vue",
+    "vuejs",
+    "components",
+    "bootstrap",
+    "skimple"
+  ],
   "main": "dist/skimple-components.umd.min.js",
   "unpkg": "dist/skimple-components.umd.min.js",
   "jsdelivr": "dist/skimple-components.umd.min.js",
   "files": [
-    "dist",
-    "src"
+    "dist/*.js",
+    "dist/*.js.map",
+    "src",
+    "nuxt"
   ],
   "scripts": {
     "serve": "vue-cli-service serve demo/demo.js",
