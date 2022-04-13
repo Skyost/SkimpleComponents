@@ -2,10 +2,17 @@
   <div>
     <ski-navbar class="mb-5">
       <ski-navbar-collapse>
+        <ski-navbar-brand>
+          SkimpleComponents
+        </ski-navbar-brand>
         <ski-navbar-items>
-          <ski-navbar-item href="#">
+          <ski-navbar-item active>
             <ski-icon icon="house-door-fill"/>
-            Accueil
+            Home
+          </ski-navbar-item>
+          <ski-navbar-item data-bs-toggle="modal" data-bs-target="#about-modal">
+            <ski-icon icon="info-circle-fill"/>
+            About
           </ski-navbar-item>
         </ski-navbar-items>
       </ski-navbar-collapse>
@@ -46,6 +53,11 @@
         <ski-button type="submit">Submit</ski-button>
       </form>
     </ski-container>
+    <ski-modal id="about-modal" title="About">
+      <p class="mb-0">
+        <a href="https://github.com/Skyost/SkimpleComponents">SkimpleComponents</a> by Skyost.
+      </p>
+    </ski-modal>
   </div>
 </template>
 
@@ -58,7 +70,9 @@ import {
   SkiFormControl,
   SkiFormControlWithLabel,
   SkiIcon,
+  SkiModal,
   SkiNavbar,
+  SkiNavbarBrand,
   SkiNavbarCollapse,
   SkiNavbarItem,
   SkiNavbarItems
@@ -69,6 +83,7 @@ export default {
   components: {
     SkiIcon,
     SkiNavbar,
+    SkiNavbarBrand,
     SkiNavbarCollapse,
     SkiNavbarItems,
     SkiNavbarItem,
@@ -77,7 +92,8 @@ export default {
     SkiColumn,
     SkiButton,
     SkiFormControlWithLabel,
-    SkiFormControl
+    SkiFormControl,
+    SkiModal
   },
   methods: {
     dangerClick: function () {
