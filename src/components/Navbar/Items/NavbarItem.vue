@@ -6,9 +6,9 @@
     <a v-else-if="href" :href="href" class="nav-link" :class="elementClass">
       <slot />
     </a>
-    <span v-else class="nav-link" :class="elementClass">
+    <button v-else class="btn btn-link nav-link" :class="elementClass">
       <slot />
-    </span>
+    </button>
   </li>
 </template>
 

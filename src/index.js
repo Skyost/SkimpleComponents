@@ -16,6 +16,7 @@ import SkiSelect from './components/Form/Select/Select'
 import SkiFormControl from './components/Form/FormControl'
 import SkiFormControlWithLabel from './components/Form/FormControlWithLabel'
 import SkiIcon from './components/Icon'
+import SkiModal from './components/Modal'
 
 export {
   SkiColumn,
@@ -35,5 +36,6 @@ export {
   SkiSelect,
   SkiFormControl,
   SkiFormControlWithLabel,
-  SkiIcon
+  SkiIcon,
+  SkiModal
 }

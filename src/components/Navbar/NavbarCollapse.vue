@@ -13,9 +13,15 @@ import SkiNavbarToggle from './NavbarToggle'
 export default {
   name: 'SkiNavbarCollapse',
   components: { SkiNavbarToggle },
+  props: {
+    id: {
+      type: String,
+      default: null
+    }
+  },
   data () {
     return {
-      navbarId: `navbar-${this.getRandomIntInclusive(0, 10000)}`
+      navbarId: this.id ?? `navbar-${this.getRandomIntInclusive(0, 10000)}`
     }
   },
   methods: {
