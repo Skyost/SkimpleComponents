@@ -1,6 +1,6 @@
 <template>
   <div class="modal fade" :id="modalId" tabindex="-1" :aria-labelledby="modalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog" :class="modalDialogClass">
       <div class="modal-content">
         <div class="modal-header">
           <h5 v-if="title" class="modal-title" :id="modalLabel" v-text="title" />
@@ -30,6 +30,10 @@ export default {
       type: String,
       default: null
     },
+    size: {
+      type: String,
+      default: null
+    },
     closeButton: {
       type: String,
       default: 'Close'
@@ -43,6 +47,9 @@ export default {
   computed: {
     modalLabel () {
       return `${this.modalId}-label`
+    },
+    modalDialogClass () {
+      return this.size ? `modal-${this.size}` : null
     }
   }
 }

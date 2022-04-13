@@ -11,10 +11,9 @@ import SkiButtonGroup from './components/Button/ButtonGroup'
 import SkiContainer from './components/Container'
 import SkiInputGroup from './components/Form/Input/InputGroup'
 import SkiInputGroupText from './components/Form/Input/InputGroupText'
-import SkiOption from './components/Form/Select/Option'
-import SkiSelect from './components/Form/Select/Select'
 import SkiFormControl from './components/Form/FormControl'
 import SkiFormControlWithLabel from './components/Form/FormControlWithLabel'
+import SkiFormSelect from './components/Form/FormSelect'
 import SkiIcon from './components/Icon'
 import SkiModal from './components/Modal'
 
@@ -32,10 +31,9 @@ export {
   SkiContainer,
   SkiInputGroup,
   SkiInputGroupText,
-  SkiOption,
-  SkiSelect,
   SkiFormControl,
   SkiFormControlWithLabel,
+  SkiFormSelect,
   SkiIcon,
   SkiModal
 }

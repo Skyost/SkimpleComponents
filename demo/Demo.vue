@@ -2,9 +2,11 @@
   <div>
     <ski-navbar class="mb-5">
       <ski-navbar-collapse>
-        <ski-navbar-brand>
-          SkimpleComponents
-        </ski-navbar-brand>
+        <template v-slot:brand>
+          <ski-navbar-brand>
+            SkimpleComponents
+          </ski-navbar-brand>
+        </template>
         <ski-navbar-items>
           <ski-navbar-item active>
             <ski-icon icon="house-door-fill"/>
@@ -53,7 +55,7 @@
         <ski-button type="submit">Submit</ski-button>
       </form>
     </ski-container>
-    <ski-modal id="about-modal" title="About">
+    <ski-modal id="about-modal" title="About" size="lg">
       <p class="mb-0">
         <a href="https://github.com/Skyost/SkimpleComponents">SkimpleComponents</a> by Skyost.
       </p>

@@ -1,5 +1,6 @@
 <template>
   <div class="container-fluid">
+    <slot name="brand" />
     <ski-navbar-toggle :target="navbarId" />
     <div :id="navbarId" class="collapse navbar-collapse">
       <slot />
