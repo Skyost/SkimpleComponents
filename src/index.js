@@ -9,10 +9,12 @@ import SkiNavbarItems from './components/Navbar/Items/NavbarItems.vue'
 import SkiButton from './components/Button/Button'
 import SkiButtonGroup from './components/Button/ButtonGroup'
 import SkiContainer from './components/Container'
-import SkiFormControl from './components/Form/FormControl'
-import SkiFormControlWithLabel from './components/Form/FormControlWithLabel'
 import SkiInputGroup from './components/Form/Input/InputGroup'
 import SkiInputGroupText from './components/Form/Input/InputGroupText'
+import SkiOption from './components/Form/Select/Option'
+import SkiSelect from './components/Form/Select/Select'
+import SkiFormControl from './components/Form/FormControl'
+import SkiFormControlWithLabel from './components/Form/FormControlWithLabel'
 import SkiIcon from './components/Icon'
 
 export {
@@ -27,9 +29,11 @@ export {
   SkiButton,
   SkiButtonGroup,
   SkiContainer,
-  SkiFormControl,
-  SkiFormControlWithLabel,
   SkiInputGroup,
   SkiInputGroupText,
+  SkiOption,
+  SkiSelect,
+  SkiFormControl,
+  SkiFormControlWithLabel,
   SkiIcon
 }

@@ -1,6 +1,6 @@
 {
   "name": "skimple-components",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "SkimpleComponents is my personal components library built on Bootstrap and designed to be used with Nuxt.",
   "homepage": "https://github.com/Skyost/SkimpleComponents",
   "bugs": {
@@ -36,9 +36,9 @@
   "dependencies": {
     "@popperjs/core": "^2.11.0",
     "bootstrap": "^5.1.3",
-    "bootstrap-icons": "^1.7.2",
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "bootstrap-icons": "^1.8.1",
+    "core-js": "^3.21.1",
+    "vue": "^2.6.14"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
