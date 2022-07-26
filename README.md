@@ -48,7 +48,7 @@ containing these lines :
 
 _Feel free to not import all Bootstrap files (see instructions [here](https://getbootstrap.com/docs/5.2/customize/sass/#importing))._
 
-Then disable the automatic Bootstrap CSS import via the `nuxt.config.js` :
+Then disable the automatic Bootstrap CSS import via the `nuxt.config.ts` :
 
 ```js
 skimpleComponents: {
