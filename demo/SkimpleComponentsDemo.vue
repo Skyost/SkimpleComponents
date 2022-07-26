@@ -81,7 +81,7 @@ import {
 } from '@'
 
 export default {
-  name: 'Demo',
+  name: 'SkimpleComponentsDemo',
   components: {
     SkiIcon,
     SkiNavbar,

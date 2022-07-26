@@ -1,13 +1,23 @@
+// Import SkimpleComponents style.
 import '@/style.scss'
-// import 'bootstrap/scss/bootstrap.scss'
+
+// Import Bootstrap icons.
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
+// Import Bootstrap JS.
 import 'bootstrap'
 
 import {createApp} from 'vue'
-import plugin from '../src'
-import Demo from './Demo.vue'
+import SkimpleComponentsDemo from './SkimpleComponentsDemo.vue'
+import plugin from '@'
+import {createRouter, createWebHistory} from 'vue-router'
 
-createApp(Demo)
+const router = createRouter({
+  history: createWebHistory(),
+  routes: []
+})
+
+createApp(SkimpleComponentsDemo)
+  .use(router)
   .use(plugin)
   .mount('#app')

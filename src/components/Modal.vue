@@ -41,7 +41,7 @@ export default {
   },
   data () {
     return {
-      modalId: this.id ?? `modal-${this.getRandomIntInclusive(0, 10000)}`
+      modalId: this.id ?? `modal-${Date.now()}${Math.round(Math.random() * 1000)}`
     }
   },
   computed: {

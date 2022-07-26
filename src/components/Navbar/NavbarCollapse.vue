@@ -22,14 +22,7 @@ export default {
   },
   computed: {
     navbarId () {
-      return this.id ?? `navbar-${this.getRandomIntInclusive(0, 10000)}`
-    }
-  },
-  methods: {
-    getRandomIntInclusive (min, max) {
-      min = Math.ceil(min)
-      max = Math.floor(max)
-      return Math.floor(Math.random() * (max - min + 1)) + min
+      return this.id ?? `navbar-${Date.now()}${Math.round(Math.random() * 1000)}`
     }
   }
 }
