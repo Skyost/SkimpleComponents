@@ -1,7 +1,7 @@
 # SkimpleComponents
 
 SkimpleComponents is my personal components library built on [Bootstrap](https://getbootstrap.com/) and designed to
-be used with [Nuxt](https://nuxtjs.org/).
+be used with [Nuxt 3](https://v3.nuxtjs.org/).
 
 ## Why this library ?
 
@@ -16,10 +16,10 @@ Keep in mind that it's just a _personal_ library : it is not meant to be complet
 First, install this library.
 
 ```shell
-npm install skimple-components
+npm i skimple-components
 ```
 
-In your `nuxt.config.js`, add the `skimple-components/nuxt` module :
+In your `nuxt.config.ts`, add the `skimple-components/nuxt` module :
 
 ```js
 modules: [
@@ -34,7 +34,8 @@ Feel free to browse available components [here](https://github.com/Skyost/Skimpl
 
 ## Customizing Bootstrap
 
-You're free to customize Bootstrap styles ! First, create your an `app.scss` file (in your `assets` folder)
+By default, SkimpleComponents includes Bootstrap with [these options](https://github.com/Skyost/SkimpleComponents/blob/master/src/style.scss).
+But you're free to customize it ! First, create your an `app.scss` file (in your `assets` folder)
 containing these lines :
 
 ```scss
@@ -45,7 +46,9 @@ containing these lines :
 @import '~bootstrap/scss/bootstrap';
 ```
 
-The disable the automatic Bootstrap CSS import via the `nuxt.config.js` :
+_Feel free to not import all Bootstrap files (see instructions [here](https://getbootstrap.com/docs/5.2/customize/sass/#importing))._
+
+Then disable the automatic Bootstrap CSS import via the `nuxt.config.js` :
 
 ```js
 skimpleComponents: {
@@ -53,7 +56,7 @@ skimpleComponents: {
 }
 ```
 
-Et voilà ! You can also disable the automatic Bootstrap JS import as well as Bootstrap icons if you don't use them :
+Et voilà ! You can disable the automatic Bootstrap JS import as well as Bootstrap icons if you don't use them :
 
 ```js
 skimpleComponents: {

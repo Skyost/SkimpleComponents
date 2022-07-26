@@ -1,14 +1,13 @@
-import '../src/custom.scss'
+import '@/style.scss'
 // import 'bootstrap/scss/bootstrap.scss'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
 import 'bootstrap'
 
-import Vue from 'vue'
+import {createApp} from 'vue'
+import plugin from '../src'
 import Demo from './Demo.vue'
 
-Vue.config.productionTip = false
-
-new Vue({
-  render: h => h(Demo)
-}).$mount('#app')
+createApp(Demo)
+  .use(plugin)
+  .mount('#app')

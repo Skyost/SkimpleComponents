@@ -20,9 +20,9 @@ export default {
       default: null
     }
   },
-  data () {
-    return {
-      navbarId: this.id ?? `navbar-${this.getRandomIntInclusive(0, 10000)}`
+  computed: {
+    navbarId () {
+      return this.id ?? `navbar-${this.getRandomIntInclusive(0, 10000)}`
     }
   },
   methods: {
