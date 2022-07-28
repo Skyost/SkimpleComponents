@@ -1,11 +1,11 @@
-import {addPlugin, createResolver, defineNuxtModule, isNuxt2} from '@nuxt/kit'
+import { addPlugin, createResolver, defineNuxtModule, isNuxt2 } from '@nuxt/kit'
 // eslint-disable-next-line import/extensions
-import {name, version} from '../package.json'
+import { name, version } from '../package.json'
 
 export default defineNuxtModule({
   meta: {
     name: 'SkimpleComponents',
-    version: version,
+    version,
     configKey: 'skimpleComponents',
     compatibility: { nuxt: '^3.0.0' }
   },
@@ -24,13 +24,13 @@ export default defineNuxtModule({
     const { resolve } = createResolver(import.meta.url)
 
     // Let's add the required settings according to the provided options.
-    if (!options.icons) {
+    if (options.icons) {
       nuxt.options.css.unshift('bootstrap-icons/font/bootstrap-icons.css')
     }
-    if (!options.bootstrapCss) {
+    if (options.bootstrapCss) {
       nuxt.options.css.unshift(`${name}/src/style.scss`)
     }
-    if (!options.bootstrapJs) {
+    if (options.bootstrapJs) {
       addPlugin({
         src: resolve('./src/plugin.ts'),
         mode: 'client'

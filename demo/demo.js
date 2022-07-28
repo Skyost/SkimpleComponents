@@ -7,10 +7,10 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 // Import Bootstrap JS.
 import 'bootstrap'
 
-import {createApp} from 'vue'
+import { createApp } from 'vue'
 import SkimpleComponentsDemo from './SkimpleComponentsDemo.vue'
 import plugin from '@'
-import {createRouter, createWebHistory} from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
   history: createWebHistory(),
