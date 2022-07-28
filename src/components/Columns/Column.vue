@@ -40,7 +40,7 @@ export default {
   computed: {
     computedClasses () {
       const classes = []
-      if (this.width || this.xxl || this.lg || this.md || this.sm || this.xs) {
+      if (this.width || this.xxl || this.xl || this.lg || this.md || this.sm || this.xs) {
         if (this.width) {
           classes.push(`col-${this.width}`)
         }
