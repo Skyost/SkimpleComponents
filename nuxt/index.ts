@@ -32,7 +32,7 @@ export default defineNuxtModule({
     }
     if (options.bootstrapJs) {
       addPlugin({
-        src: resolve('./src/plugin.ts'),
+        src: resolve('./plugin.ts'),
         mode: 'client'
       })
     }
