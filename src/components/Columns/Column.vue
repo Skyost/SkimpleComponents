@@ -47,6 +47,9 @@ export default {
         if (this.xxl) {
           classes.push(`col-xxl-${this.xxl}`)
         }
+        if (this.xl) {
+          classes.push(`col-xl-${this.xl}`)
+        }
         if (this.lg) {
           classes.push(`col-lg-${this.lg}`)
         }
