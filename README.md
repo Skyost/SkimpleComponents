@@ -39,26 +39,43 @@ But you're free to customize it ! First, create your an `app.scss` file (in your
 containing these lines :
 
 ```scss
-// YOUR STYLES HERE.
+// Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
 // For example :
 // $primary: #212529;
 
 @import '~bootstrap/scss/bootstrap';
+
+// Then add additional custom code here
+// For example :
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+// ...
 ```
 
 _Feel free to not import all Bootstrap files (see instructions [here](https://getbootstrap.com/docs/5.2/customize/sass/#importing))._
 
-Then disable the automatic Bootstrap CSS import via the `nuxt.config.ts` :
+Then add the `app.scss` to the `nuxt.config.ts` :
 
-```js
+```typescript
+css: [
+  '~/assets/app.scss'
+]
+```
+
+And disable the automatic Bootstrap CSS import via the `nuxt.config.ts` :
+
+```typescript
 skimpleComponents: {
   bootstrapCss: false
 }
 ```
 
-Et voilà ! You can disable the automatic Bootstrap JS import as well as Bootstrap icons if you don't use them :
+Et voilà !
 
-```js
+You can disable the automatic Bootstrap JS import as well as Bootstrap icons if you don't use them :
+
+```typescript
 skimpleComponents: {
   bootstrapCss: false,
   bootstrapJs: false,
