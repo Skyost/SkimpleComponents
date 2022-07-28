@@ -1,6 +1,6 @@
 {
   "name": "skimple-components",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "SkimpleComponents is my personal components library built on Bootstrap and designed to be used with Nuxt.",
   "homepage": "https://github.com/Skyost/SkimpleComponents",
   "bugs": {
