@@ -1,11 +1,11 @@
 import {addPlugin, createResolver, defineNuxtModule, isNuxt2} from '@nuxt/kit'
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const metadata = require('./package.json')
+// eslint-disable-next-line import/extensions
+import {name, version} from '../package.json'
 
 export default defineNuxtModule({
   meta: {
     name: 'SkimpleComponents',
-    version: metadata.version,
+    version: version,
     configKey: 'skimpleComponents',
     compatibility: { nuxt: '^3.0.0' }
   },
@@ -28,7 +28,7 @@ export default defineNuxtModule({
       nuxt.options.css.unshift('bootstrap-icons/font/bootstrap-icons.css')
     }
     if (!options.bootstrapCss) {
-      nuxt.options.css.unshift(`${metadata.name}/src/style.scss`)
+      nuxt.options.css.unshift(`${name}/src/style.scss`)
     }
     if (!options.bootstrapJs) {
       addPlugin({
