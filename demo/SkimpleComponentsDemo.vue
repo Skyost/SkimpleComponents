@@ -78,7 +78,7 @@ import {
   SkiNavbarCollapse,
   SkiNavbarItem,
   SkiNavbarItems
-} from '@'
+} from '@/main.js'
 
 export default {
   name: 'SkimpleComponentsDemo',

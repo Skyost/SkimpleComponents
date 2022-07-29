@@ -30,6 +30,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./lib', import.meta.url))
-    }
+    },
+    dedupe: ['vue']
   }
 })

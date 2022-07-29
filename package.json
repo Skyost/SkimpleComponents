@@ -35,8 +35,7 @@
     "./nuxt": "./nuxt/index.ts"
   },
   "files": [
-    "dist/*.js",
-    "dist/*.js.map",
+    "dist",
     "lib/style.scss",
     "nuxt"
   ],
