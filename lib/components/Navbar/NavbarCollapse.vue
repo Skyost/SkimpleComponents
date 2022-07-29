@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import SkiNavbarToggle from './NavbarToggle'
+import SkiNavbarToggle from './NavbarToggle.vue'
 
 export default {
   name: 'SkiNavbarCollapse',

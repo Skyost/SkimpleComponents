@@ -28,7 +28,7 @@ export default defineNuxtModule({
       nuxt.options.css.unshift('bootstrap-icons/font/bootstrap-icons.css')
     }
     if (options.bootstrapCss) {
-      nuxt.options.css.unshift(`${name}/src/style.scss`)
+      nuxt.options.css.unshift(`${name}/lib/style.scss`)
     }
     if (options.bootstrapJs) {
       addPlugin({

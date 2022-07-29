@@ -1,6 +1,6 @@
 {
   "name": "skimple-components",
-  "version": "0.4.7",
+  "version": "0.5.0",
   "type": "module",
   "description": "SkimpleComponents is my personal components library built on Bootstrap and designed to be used with Nuxt.",
   "homepage": "https://github.com/Skyost/SkimpleComponents",
@@ -23,35 +23,43 @@
     "nuxtjs",
     "nuxt.js"
   ],
-  "main": "src/index.js",
-  "unpkg": "dist/skimple-components.umd.min.js",
-  "jsdelivr": "dist/skimple-components.umd.min.js",
+  "main": "./dist/skimple-components.umd.cjs",
+  "unpkg": "./dist/skimple-components.js",
+  "jsdelivr": "./dist/skimple-components.js",
+  "module": "./dist/skimple-components.js",
+  "exports": {
+    ".": {
+      "import": "./dist/skimple-components.js",
+      "require": "./dist/skimple-components.umd.cjs"
+    }
+  },
   "files": [
     "dist/*.js",
     "dist/*.js.map",
-    "src",
+    "lib/style.scss",
     "nuxt"
   ],
   "scripts": {
-    "serve": "vue-cli-service serve demo/demo.js",
-    "build": "vue-cli-service build  --target lib --name skimple-components src/index.js",
-    "lint": "vue-cli-service lint"
+    "dev": "vite",
+    "build": "run-p type-check build-only",
+    "preview": "vite preview --port 4173",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --noEmit",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config-typescript": "^10.0.0",
-    "@rushstack/eslint-patch": "^1.1.4",
-    "@types/bootstrap": "^5.2.0",
-    "@types/node": "^18.6.1",
-    "@typescript-eslint/eslint-plugin": "^5.31.0",
-    "@typescript-eslint/parser": "^5.31.0",
-    "@vue/cli-plugin-eslint": "^5.0.8",
-    "@vue/cli-service": "^5.0.8",
-    "@vue/eslint-config-standard": "^8.0.0",
-    "eslint": "^8.20.0",
-    "eslint-plugin-vue": "^9.2.0",
-    "sass": "^1.53.0",
-    "sass-loader": "^13.0.2",
-    "typescript": "^4.7.4"
+    "@rushstack/eslint-patch": "^1.1.0",
+    "@types/node": "^16.11.45",
+    "@vitejs/plugin-vue": "^3.0.1",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "@vue/tsconfig": "^0.1.3",
+    "eslint": "^8.5.0",
+    "eslint-plugin-vue": "^9.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.54.0",
+    "typescript": "~4.7.4",
+    "vite": "^3.0.1",
+    "vue-tsc": "^0.38.8"
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0-rc.6",
