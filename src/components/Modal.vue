@@ -9,7 +9,7 @@
         <div class="modal-body">
           <slot />
         </div>
-        <div class="modal-footer">
+        <div v-if="showFooter" class="modal-footer">
           <button v-if="closeButton" type="button" class="btn btn-secondary" data-bs-dismiss="modal" v-text="closeButton" />
           <slot name="buttons" />
         </div>
@@ -33,6 +33,10 @@ export default {
     size: {
       type: String,
       default: null
+    },
+    showFooter: {
+      type: Boolean,
+      default: true
     },
     closeButton: {
       type: String,

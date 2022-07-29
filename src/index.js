@@ -1,4 +1,4 @@
-import * as skiComponents from './components'
+import * as skiComponents from './components/index.js'
 
 const plugin = {
   install (Vue) {
@@ -13,4 +13,4 @@ const plugin = {
 }
 
 export default plugin
-export * from './components'
+export * from './components/index.js'

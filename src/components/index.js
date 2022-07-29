@@ -8,7 +8,7 @@ export {
   SkiModal
 }
 
-export * from './Button'
-export * from './Columns'
-export * from './Form'
-export * from './Navbar'
+export * from './Button/index.js'
+export * from './Columns/index.js'
+export * from './Form/index.js'
+export * from './Navbar/index.js'

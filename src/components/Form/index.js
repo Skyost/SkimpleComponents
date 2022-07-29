@@ -8,4 +8,4 @@ export {
   SkiFormSelect
 }
 
-export * from './Input'
+export * from './Input/index.js'

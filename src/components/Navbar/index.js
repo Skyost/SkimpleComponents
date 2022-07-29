@@ -10,4 +10,4 @@ export {
   SkiNavbarToggle
 }
 
-export * from './Items'
+export * from './Items/index.js'
