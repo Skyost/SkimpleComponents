@@ -31,6 +31,6 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./lib', import.meta.url))
     },
-    dedupe: ['vue']
+    dedupe: ['vue', 'vue-router']
   }
 })
