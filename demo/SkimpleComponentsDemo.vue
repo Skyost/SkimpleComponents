@@ -1,8 +1,8 @@
 <template>
   <div>
     <ski-navbar class="mb-5">
-      <ski-navbar-collapse>
-        <template v-slot:brand>
+      <ski-navbar-collapse id="navbar">
+        <template #brand>
           <ski-navbar-brand>
             SkimpleComponents
           </ski-navbar-brand>

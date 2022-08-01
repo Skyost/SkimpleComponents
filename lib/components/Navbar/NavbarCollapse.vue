@@ -1,8 +1,8 @@
 <template>
   <div class="container-fluid">
     <slot name="brand" />
-    <ski-navbar-toggle :target="navbarId" />
-    <div :id="navbarId" class="collapse navbar-collapse">
+    <ski-navbar-toggle :target="id" />
+    <div :id="id" class="collapse navbar-collapse">
       <slot />
     </div>
   </div>
@@ -17,12 +17,7 @@ export default {
   props: {
     id: {
       type: String,
-      default: null
-    }
-  },
-  computed: {
-    navbarId () {
-      return this.id ?? `navbar-${Date.now()}${Math.round(Math.random() * 1000)}`
+      required: true
     }
   }
 }

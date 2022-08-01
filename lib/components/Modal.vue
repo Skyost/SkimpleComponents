@@ -1,5 +1,5 @@
 <template>
-  <div class="modal fade" :id="modalId" tabindex="-1" :aria-labelledby="modalLabel" aria-hidden="true">
+  <div :id="id" class="modal fade" tabindex="-1" :aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog" :class="modalDialogClass">
       <div class="modal-content">
         <div class="modal-header">
@@ -24,7 +24,7 @@ export default {
   props: {
     id: {
       type: String,
-      default: null
+      required: true
     },
     title: {
       type: String,
@@ -43,14 +43,9 @@ export default {
       default: 'Close'
     }
   },
-  data () {
-    return {
-      modalId: this.id ?? `modal-${Date.now()}${Math.round(Math.random() * 1000)}`
-    }
-  },
   computed: {
     modalLabel () {
-      return `${this.modalId}-label`
+      return `${this.id}-label`
     },
     modalDialogClass () {
       return this.size ? `modal-${this.size}` : null
