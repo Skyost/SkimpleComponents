@@ -41,7 +41,8 @@ export default defineNuxtModule({
     nuxt.hook('components:dirs', (dirs: (string | ComponentsDir)[]) => {
       dirs.push({
         path: resolve('../lib/components/'),
-        prefix: 'Ski'
+        prefix: 'Ski',
+        pathPrefix: false
       });
     })
   }
