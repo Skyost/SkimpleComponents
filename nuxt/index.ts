@@ -40,7 +40,8 @@ export default defineNuxtModule({
     // Registers Nuxt components.
     nuxt.hook('components:dirs', (dirs: (string | ComponentsDir)[]) => {
       dirs.push({
-        path: resolve('../lib/components/')
+        path: resolve('../lib/components/'),
+        prefix: 'Ski'
       });
     })
   }
