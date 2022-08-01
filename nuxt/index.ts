@@ -1,6 +1,6 @@
 import { addPlugin, createResolver, defineNuxtModule, isNuxt2 } from '@nuxt/kit'
-// eslint-disable-next-line import/extensions
 import { name, version } from '../package.json'
+import type { ComponentsDir } from '@nuxt/schema'
 
 export default defineNuxtModule({
   meta: {
@@ -36,5 +36,12 @@ export default defineNuxtModule({
         mode: 'client'
       })
     }
+
+    // Registers Nuxt components.
+    nuxt.hook('components:dirs', (dirs: (string | ComponentsDir)[]) => {
+      dirs.push({
+        path: resolve('./lib/components/')
+      });
+    })
   }
 })
