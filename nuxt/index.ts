@@ -7,7 +7,7 @@ export default defineNuxtModule({
     name: 'SkimpleComponents',
     version,
     configKey: 'skimpleComponents',
-    compatibility: { nuxt: '^3.0.0' }
+    compatibility: { nuxt: '^3.0.0-rc.9' },
   },
   defaults: {
     bootstrapCss: true,
