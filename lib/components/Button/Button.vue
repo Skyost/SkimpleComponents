@@ -5,7 +5,6 @@
     class="btn"
     :class="elementClass"
     role="button"
-    @click="$emit('click')"
   >
     <slot />
   </router-link>
@@ -15,7 +14,6 @@
     class="btn"
     :class="elementClass"
     role="button"
-    @click="$emit('click')"
   >
     <slot />
   </a>
@@ -24,7 +22,6 @@
     class="btn"
     :class="elementClass"
     type="button"
-    @click="$emit('click')"
   >
     <slot />
   </button>

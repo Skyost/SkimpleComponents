@@ -6,7 +6,6 @@
     :placeholder="placeholder"
     :class="elementClass"
     :value="value"
-    @input="$emit('input', $event.target.value)"
   >
 </template>
 
