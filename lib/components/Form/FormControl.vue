@@ -5,7 +5,8 @@
     :type="type"
     :placeholder="placeholder"
     :class="elementClass"
-    :value="value"
+    :value="modelValue"
+    @input="$emit('update:modelValue', $event.target.value)"
   >
 </template>
 
@@ -29,11 +30,12 @@ export default {
       type: String,
       default: null
     },
-    value: {
+    modelValue: {
       type: String,
       default: null
     }
   },
+  emits: ['update:modelValue'],
   computed: {
     computedName () {
       return this.name ? this.name : this.id

@@ -39,7 +39,7 @@
       <form class="mt-5">
         <div class="mb-3">
           <ski-form-control-with-label label="Email">
-            <ski-form-control type="email" placeholder="Enter your email"/>
+            <ski-form-control type="email" placeholder="Enter your email" v-model="email"/>
           </ski-form-control-with-label>
         </div>
         <div class="mb-3">
@@ -96,6 +96,14 @@ export default {
     SkiFormControlWithLabel,
     SkiFormControl,
     SkiModal
+  },
+  data: () => ({
+    email: 'default@email.com'
+  }),
+  watch: {
+    email (newEmail) {
+      console.log(`Updated email : ${newEmail}.`)
+    },
   },
   methods: {
     dangerClick: function () {

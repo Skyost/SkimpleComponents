@@ -2,7 +2,13 @@ import { addPlugin, createResolver, defineNuxtModule, isNuxt2 } from '@nuxt/kit'
 import { name, version } from '../package.json'
 import type { ComponentsDir } from '@nuxt/schema'
 
-export default defineNuxtModule({
+export interface SkimpleComponentsNuxtModuleOptions {
+  bootstrapCss: boolean;
+  bootstrapJs: boolean;
+  icons: boolean;
+}
+
+export default defineNuxtModule<SkimpleComponentsNuxtModuleOptions>({
   meta: {
     name: 'SkimpleComponents',
     version,
