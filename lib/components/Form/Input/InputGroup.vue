@@ -1,5 +1,5 @@
 <template>
-  <div class="input-group" :class="this.elementClass">
+  <div class="input-group" :class="elementClass">
     <slot />
   </div>
 </template>

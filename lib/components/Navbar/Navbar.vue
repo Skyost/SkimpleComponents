@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar" :class="computedClasses">
+  <nav class="navbar" :class="computedClasses" :data-bs-theme="theme">
     <slot />
   </nav>
 </template>
@@ -12,17 +12,20 @@ export default {
       type: String,
       default: 'lg'
     },
-    brightness: {
+    color: {
       type: String,
-      default: 'dark'
+      default: 'body-tertiary'
+    },
+    theme: {
+      type: String,
+      default: null
     }
   },
   computed: {
     computedClasses () {
       return [
         `navbar-expand-${this.expand}`,
-        `navbar-${this.brightness}`,
-        `bg-${this.brightness}`
+        `bg-${this.color}`
       ]
     }
   }

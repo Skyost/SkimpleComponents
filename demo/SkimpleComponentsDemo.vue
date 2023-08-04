@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ski-navbar class="mb-5">
+    <ski-navbar class="mb-5" color="dark" theme="dark">
       <ski-navbar-collapse id="navbar">
         <template #brand>
           <ski-navbar-brand>
