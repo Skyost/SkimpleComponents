@@ -8,7 +8,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, 'lib/main.js'),
+      entry: resolve(__dirname, 'lib/main.ts'),
       name: 'SkimpleComponents',
       // the proper extensions will be added
       fileName: 'skimple-components'
