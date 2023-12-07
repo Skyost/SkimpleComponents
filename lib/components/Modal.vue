@@ -1,3 +1,23 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+
+defineOptions({ name: 'SkiModal' })
+
+const props = withDefaults(defineProps<{
+  id: string,
+  title?: string,
+  size?: string,
+  showFooter?: boolean,
+  closeButton?: string
+}>(), {
+  showFooter: true,
+  closeButton: 'Close'
+})
+
+const modalLabel = computed<string>(() => `${props.id}-label`)
+const modalDialogClass = computed<string>(() => props.size ? `modal-${props.size}` : null)
+</script>
+
 <template>
   <div :id="id" class="modal fade" tabindex="-1" :aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog" :class="modalDialogClass">
@@ -17,39 +37,3 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'SkiModal',
-  props: {
-    id: {
-      type: String,
-      required: true
-    },
-    title: {
-      type: String,
-      default: null
-    },
-    size: {
-      type: String,
-      default: null
-    },
-    showFooter: {
-      type: Boolean,
-      default: true
-    },
-    closeButton: {
-      type: String,
-      default: 'Close'
-    }
-  },
-  computed: {
-    modalLabel () {
-      return `${this.id}-label`
-    },
-    modalDialogClass () {
-      return this.size ? `modal-${this.size}` : null
-    }
-  }
-}
-</script>

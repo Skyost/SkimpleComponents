@@ -1,72 +1,51 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+
+defineOptions({ name: 'SkiColumn' })
+
+const props = defineProps<{
+  width?: string | number,
+  xxl?: string | number,
+  xl?: string | number,
+  lg?: string | number,
+  md?: string | number,
+  sm?: string | number,
+  xs?: string | number
+}>()
+
+const columnClasses = computed<string[]>(() => {
+  const result = []
+  if (props.width || props.xxl || props.xl || props.lg || props.md || props.sm || props.xs) {
+    if (props.width) {
+      result.push(`col-${props.width}`)
+    }
+    if (props.xxl) {
+      result.push(`col-xxl-${props.xxl}`)
+    }
+    if (props.xl) {
+      result.push(`col-xl-${props.xl}`)
+    }
+    if (props.lg) {
+      result.push(`col-lg-${props.lg}`)
+    }
+    if (props.md) {
+      result.push(`col-md-${props.md}`)
+    }
+    if (props.sm) {
+      result.push(`col-sm-${props.sm}`)
+    }
+    if (props.xs) {
+      result.push(`col-xs-${props.xs}`)
+    }
+  } else {
+    result.push('col')
+  }
+  return result
+})
+</script>
+
 <template>
-  <div :class="computedClasses">
+  <div :class="columnClasses">
     <slot/>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'SkiColumn',
-  props: {
-    width: {
-      type: String,
-      default: null
-    },
-    xxl: {
-      type: String,
-      default: null
-    },
-    xl: {
-      type: String,
-      default: null
-    },
-    lg: {
-      type: String,
-      default: null
-    },
-    md: {
-      type: String,
-      default: null
-    },
-    sm: {
-      type: String,
-      default: null
-    },
-    xs: {
-      type: String,
-      default: null
-    }
-  },
-  computed: {
-    computedClasses () {
-      const classes = []
-      if (this.width || this.xxl || this.xl || this.lg || this.md || this.sm || this.xs) {
-        if (this.width) {
-          classes.push(`col-${this.width}`)
-        }
-        if (this.xxl) {
-          classes.push(`col-xxl-${this.xxl}`)
-        }
-        if (this.xl) {
-          classes.push(`col-xl-${this.xl}`)
-        }
-        if (this.lg) {
-          classes.push(`col-lg-${this.lg}`)
-        }
-        if (this.md) {
-          classes.push(`col-md-${this.md}`)
-        }
-        if (this.sm) {
-          classes.push(`col-sm-${this.sm}`)
-        }
-        if (this.xs) {
-          classes.push(`col-xs-${this.xs}`)
-        }
-      } else {
-        classes.push('col')
-      }
-      return classes
-    }
-  }
-}
-</script>

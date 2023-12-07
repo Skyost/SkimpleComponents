@@ -38,7 +38,7 @@ export default defineNuxtModule<SkimpleComponentsNuxtModuleOptions>({
     }
     if (options.bootstrapJs) {
       addPlugin({
-        src: resolve('./plugin.js'),
+        src: resolve('./plugin.ts'),
         mode: 'client'
       })
     }

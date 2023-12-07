@@ -1,33 +1,26 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+
+defineOptions({ name: 'SkiNavbar' })
+
+const props = withDefaults(defineProps<{
+  expand?: string,
+  color?: string,
+  theme?: string
+}>(), {
+  expand: 'lg',
+  color: 'body-tertiary'
+})
+
+const navbarClasses = computed<string[]>(() => [
+  `navbar-expand-${props.expand}`,
+  `bg-${props.color}`
+])
+</script>
+
+
 <template>
-  <nav class="navbar" :class="computedClasses" :data-bs-theme="theme">
+  <nav class="navbar" :class="navbarClasses" :data-bs-theme="theme">
     <slot />
   </nav>
 </template>
-
-<script>
-export default {
-  name: 'SkiNavbar',
-  props: {
-    expand: {
-      type: String,
-      default: 'lg'
-    },
-    color: {
-      type: String,
-      default: 'body-tertiary'
-    },
-    theme: {
-      type: String,
-      default: null
-    }
-  },
-  computed: {
-    computedClasses () {
-      return [
-        `navbar-expand-${this.expand}`,
-        `bg-${this.color}`
-      ]
-    }
-  }
-}
-</script>

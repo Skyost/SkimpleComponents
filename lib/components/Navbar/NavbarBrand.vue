@@ -1,3 +1,12 @@
+<script setup lang="ts">
+defineOptions({ name: 'SkiNavbarBrand' })
+
+defineProps<{
+  to?: string,
+  href?: string
+}>()
+</script>
+
 <template>
   <router-link v-if="to" :to="to" class="navbar-brand">
     <slot />
@@ -9,19 +18,3 @@
     <slot />
   </span>
 </template>
-
-<script>
-export default {
-  name: 'SkiNavbarBrand',
-  props: {
-    to: {
-      type: String,
-      default: null
-    },
-    href: {
-      type: String,
-      default: null
-    }
-  }
-}
-</script>

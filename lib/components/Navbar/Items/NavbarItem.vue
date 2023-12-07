@@ -1,3 +1,17 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+
+defineOptions({ name: 'SkiNavbarItem' })
+
+const props = defineProps<{
+  to?: string,
+  href?: string,
+  active?: boolean | string
+}>()
+
+const elementClass = computed<string | null>(() => props.active ? 'active' : null)
+</script>
+
 <template>
   <li class="nav-item">
     <router-link v-if="to" :to="to" class="nav-link" :class="elementClass">
@@ -11,28 +25,3 @@
     </button>
   </li>
 </template>
-
-<script>
-export default {
-  name: 'SkiNavbarItem',
-  props: {
-    to: {
-      type: String,
-      default: null
-    },
-    href: {
-      type: String,
-      default: null
-    },
-    active: {
-      type: Boolean,
-      default: null
-    }
-  },
-  computed: {
-    elementClass () {
-      return this.active ? 'active' : null
-    }
-  }
-}
-</script>

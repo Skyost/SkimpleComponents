@@ -1,32 +1,36 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+
+defineOptions({ name: 'SkiFormSelect' })
+
+const props = defineProps<{
+  id?: string,
+  name?: string,
+  size?: string,
+  modelValue?: string
+}>()
+
+const emit = defineEmits<{
+  'update:modelValue': [value: string]
+}>()
+
+const computedName = computed<string | null>(() => props.name ? props.name : props.id)
+const selectClass = computed<string | null>(() => props.size ? `form-select-${props.size}` : null)
+
+const onInput = (event: Event) => {
+  const target = event.target as HTMLInputElement;
+  emit('update:modelValue', target.value)
+}
+</script>
+
 <template>
   <select
       class="form-select"
-      :class="elementClass"
+      :name="computedName"
+      :class="selectClass"
       :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
+      @input="onInput"
   >
     <slot />
   </select>
 </template>
-
-<script>
-export default {
-  name: 'SkiFormSelect',
-  props: {
-    size: {
-      type: String,
-      default: null
-    },
-    modelValue: {
-      type: String,
-      default: null
-    }
-  },
-  emits: ['update:modelValue'],
-  computed: {
-    elementClass () {
-      return this.size ? `form-select-${this.size}` : null
-    }
-  }
-}
-</script>

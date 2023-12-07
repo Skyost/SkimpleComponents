@@ -1,3 +1,11 @@
+<script setup lang="ts">
+defineOptions({ name: 'SkiNavbarToggle' })
+
+defineProps<{
+  target: string
+}>()
+</script>
+
 <template>
   <button
     class="navbar-toggler"
@@ -11,15 +19,3 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 </template>
-
-<script>
-export default {
-  name: 'SkiNavbarToggle',
-  props: {
-    target: {
-      type: String,
-      required: true
-    }
-  }
-}
-</script>

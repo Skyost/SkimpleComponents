@@ -1,15 +1,16 @@
-import * as skiComponents from './components/index.js'
+import * as skiComponents from './components/index'
+import { App, Plugin } from 'vue';
 
-const vuePlugin = {
-  install (Vue) {
+const vuePlugin: Plugin = {
+  install (app: App) {
     for (const componentName in skiComponents) {
       if (Object.prototype.hasOwnProperty.call(skiComponents, componentName)) {
         const component = skiComponents[componentName]
-        Vue.component(component.name, component)
+        app.component(component.name, component)
       }
     }
   }
 }
 
 export default vuePlugin
-export * from './components/index.js'
+export * from './components/index'

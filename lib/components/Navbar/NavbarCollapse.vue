@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import SkiNavbarToggle from './NavbarToggle.vue'
+
+defineProps<{
+  id: string
+}>()
+</script>
+
 <template>
   <div class="container-fluid">
     <slot name="brand" />
@@ -7,18 +15,3 @@
     </div>
   </div>
 </template>
-
-<script>
-import SkiNavbarToggle from './NavbarToggle.vue'
-
-export default {
-  name: 'SkiNavbarCollapse',
-  components: { SkiNavbarToggle },
-  props: {
-    id: {
-      type: String,
-      required: true
-    }
-  }
-}
-</script>

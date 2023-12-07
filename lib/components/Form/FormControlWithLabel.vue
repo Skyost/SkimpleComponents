@@ -1,22 +1,15 @@
+<script setup lang="ts">
+defineOptions({ name: 'SkiFormControlWithLabel' })
+
+defineProps<{
+  id?: string,
+  label?: string
+}>()
+</script>
+
 <template>
   <div>
     <label v-if="label" class="form-label" v-text="label" :for="id" />
     <slot />
   </div>
 </template>
-
-<script>
-export default {
-  name: 'SkiFormControlWithLabel',
-  props: {
-    label: {
-      type: String,
-      default: null
-    },
-    id: {
-      type: String,
-      default: null
-    }
-  }
-}
-</script>

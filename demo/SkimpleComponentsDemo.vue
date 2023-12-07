@@ -1,3 +1,27 @@
+<script setup lang="ts">
+import {
+  SkiButton,
+  SkiColumn,
+  SkiColumns,
+  SkiContainer,
+  SkiFormControl,
+  SkiFormControlWithLabel,
+  SkiIcon,
+  SkiModal,
+  SkiNavbar,
+  SkiNavbarBrand,
+  SkiNavbarCollapse,
+  SkiNavbarItem,
+  SkiNavbarItems
+} from '@/main'
+import { ref, watch } from 'vue'
+
+const email = ref<string>('default@email.com')
+watch(email, (value) => console.log(`Updated email : ${value}.`))
+
+const dangerClick = () => alert('Your computer will explode in five seconds...')
+</script>
+
 <template>
   <div>
     <ski-navbar class="mb-5" color="dark" theme="dark">
@@ -21,22 +45,22 @@
     </ski-navbar>
     <ski-container>
       <ski-columns>
-        <ski-column>First column.</ski-column>
-        <ski-column>Second column.</ski-column>
-        <ski-column>Third column.</ski-column>
+        <ski-column class="text-start">First column.</ski-column>
+        <ski-column class="text-center">Second column.</ski-column>
+        <ski-column class="text-end">Third column.</ski-column>
       </ski-columns>
       <ski-columns>
         <ski-column width="2">
-          <ski-button variant="danger" @click="dangerClick">Danger !</ski-button>
+          <ski-button variant="danger" class="w-100" @click="dangerClick">Danger !</ski-button>
         </ski-column>
         <ski-column>
           <ski-button class="d-block w-100">Big button</ski-button>
         </ski-column>
         <ski-column width="2">
-          <ski-button variant="info" outlined="true" href="https://skyost.eu">Info</ski-button>
+          <ski-button variant="info" class="w-100" outlined="true" href="https://skyost.eu">Info</ski-button>
         </ski-column>
       </ski-columns>
-      <form class="mt-5">
+      <form class="mt-5 p-5 bg-light">
         <div class="mb-3">
           <ski-form-control-with-label label="Email">
             <ski-form-control type="email" placeholder="Enter your email" v-model="email"/>
@@ -62,53 +86,3 @@
     </ski-modal>
   </div>
 </template>
-
-<script>
-import {
-  SkiButton,
-  SkiColumn,
-  SkiColumns,
-  SkiContainer,
-  SkiFormControl,
-  SkiFormControlWithLabel,
-  SkiIcon,
-  SkiModal,
-  SkiNavbar,
-  SkiNavbarBrand,
-  SkiNavbarCollapse,
-  SkiNavbarItem,
-  SkiNavbarItems
-} from '@/main.js'
-
-export default {
-  name: 'SkimpleComponentsDemo',
-  components: {
-    SkiIcon,
-    SkiNavbar,
-    SkiNavbarBrand,
-    SkiNavbarCollapse,
-    SkiNavbarItems,
-    SkiNavbarItem,
-    SkiContainer,
-    SkiColumns,
-    SkiColumn,
-    SkiButton,
-    SkiFormControlWithLabel,
-    SkiFormControl,
-    SkiModal
-  },
-  data: () => ({
-    email: 'default@email.com'
-  }),
-  watch: {
-    email (newEmail) {
-      console.log(`Updated email : ${newEmail}.`)
-    },
-  },
-  methods: {
-    dangerClick: function () {
-      alert('Danger !')
-    }
-  }
-}
-</script>

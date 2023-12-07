@@ -9,7 +9,7 @@ import 'bootstrap'
 
 import { createApp } from 'vue'
 import SkimpleComponentsDemo from './SkimpleComponentsDemo.vue'
-import plugin from '@/main.js'
+import plugin from '@/main'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({

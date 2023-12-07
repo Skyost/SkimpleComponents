@@ -1,10 +1,42 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+
+defineOptions({ name: 'SkiButton' })
+
+const props = withDefaults(defineProps<{
+  to?: string,
+  href?: string,
+  variant?: string,
+  outlined?: string,
+  size?: 'lg' | 'sm',
+  disabled?: boolean | string
+}>(), {
+  variant: 'dark'
+})
+
+const buttonClasses = computed<string[]>(() => {
+  const result = [
+    props.outlined ? `btn-outline-${props.variant}` : `btn-${props.variant}`,
+  ]
+  if (props.size) {
+    result.push(`btn-${props.size}`)
+  }
+  if (props.disabled) {
+    result.push('disabled')
+  }
+  return result
+})
+const disabledAttribute = computed<boolean | null>(() => props.disabled ? true : null)
+</script>
+
 <template>
   <router-link
     v-if="to"
     :to="to"
     class="btn"
-    :class="elementClass"
+    :class="buttonClasses"
     role="button"
+    :aria-disabled="disabledAttribute"
   >
     <slot />
   </router-link>
@@ -12,46 +44,19 @@
     v-else-if="href"
     :href="href"
     class="btn"
-    :class="elementClass"
+    :class="buttonClasses"
     role="button"
+    :aria-disabled="disabledAttribute"
   >
     <slot />
   </a>
   <button
     v-else
     class="btn"
-    :class="elementClass"
+    :class="buttonClasses"
     type="button"
+    :disabled="disabledAttribute"
   >
     <slot />
   </button>
 </template>
-
-<script>
-export default {
-  name: 'SkiButton',
-  props: {
-    to: {
-      type: String,
-      default: null
-    },
-    href: {
-      type: String,
-      default: null
-    },
-    variant: {
-      type: String,
-      default: 'dark'
-    },
-    outlined: {
-      type: String,
-      default: null
-    }
-  },
-  computed: {
-    elementClass () {
-      return this.outlined ? `btn-outline-${this.variant}` : `btn-${this.variant}`
-    }
-  }
-}
-</script>
